@@ -1,75 +1,52 @@
-# Jykell configuration
-#markdown: redcarpet
-#highlighter: pygments
-markdown: kramdown
-highlighter: rouge
-paginate: 5
-language: 'de-de'
-
-# Website info
-name: 'Finding The Way Home'
-description: "A beautiful narrative written with the world's most elegant publishing platform. The story begins here."
-
-# Author's info
-author: 'Casper McFadden'
-# edit 'categories' in the front matter of every post to match this username
-nickname: tomtone
-bio: 'A paranormal expert and his daughter bunk in an abandoned house populated by 3 mischievous ghosts and one friendly one.'
-location: 'Bremen, Germany'
-url: 'http://tomtone.github.io/'
-image: 'assets/images/casper.png'
-
-short_url: 'tomtone.github.io/'
-google_analytics: UA-69281367-1
-disqus: username
-# edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /
-
-# Permalinks
-permalink: /:title
-# permalink: /author/:username
-# permalink: /tag/:tag
-
-
-# gems and other configs
+# Build settings
+permalink   : /blog/:year/:title/
+markdown    : kramdown
+highlighter : pygments
 gems: [jekyll-paginate]
-exclude: [vendor]
 
-# Additional settings available on the front-matter
-# Site logo in the index.html (as in demo.ghost.io)
-# Author's page cover in _layouts/author.html
-# The same for page.html and tag.html layouts
-# Post's page cover as a per-post basis _posts/...
-# Disqus comments as a per-post basis
-# ...
+paginate: 3
+paginate_path: "/blog/page/:num/"
+comments: false
 
+source: source
+destination: _site
+sass:
+  sass_dir: _scss
+  style: compressed # expanded
+timezone: "Europe/Berlin"
+# SEO settings
+title: tomtone.github.io
+description: "blogging about every day development stuff"
+keywords: "web, development, magento, symfony, web technologies"
+url: http://tomtone.github.io
+baseurl: ""
+# baseurl: ""
 
-# Settings for builing master branch with travis-ci
-# with jekyll-travis
+# google_analytics: UA-52446115-1
+repo: http://github.com/tomtone/tomtone.github.io
+#disqus_shortname: "fernandomoreira"
+#disqus_site_shortname: "fernandomoreira"
 
-# Settings for deploy rake task
-# Username and repo of Github repo, e.g.
-# https://github.com/USERNAME/REPO.git
-# username defaults to ENV['GIT_NAME'] used by Travis
-# repo defaults to USERNAME.github.io
-# Branch defaults to "source" for USERNAME.github.io
-# or "master" otherwise
-safe: false
-lsi: false
-username: tomtone
-repo: tomtone.github.io
-branch: source
-relative_source: /
-destination: .
-production_url:  https://tomtone.github.io/
-source_url:      https://github.com/tomtone/tomtone.github.io
+# Author settings
+author:
+  name      : Thomas von Gostomski
+  job       : Webdeveloper
+  bio       : "Magento Evangelist, Performace Enthusiast, always looking for the best project and good coffee."
+  thumb     : /images/author.jpg
+  email     : info@von-gostomski.eu
+  url       : http://nandomoreira.me
+  github    : http://github.com/tomtone
+  xing      : https://www.xing.com/profile/Thomas_vonGostomski
 
-exclude:
-  - README.md
-  - Rakefile
-  - Gemfile
-  - Gemfile.lock
-  - changelog.md
-  - "*.Rmd"
-  - vendor
-  - .travis.yml
+# navbar pages
+navbar:
+  - slug: about
+    title: About
+  # - slug: resume
+  #   title: Resume
+  # - slug: skills
+  #   title: Skills
+  - slug: blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
