@@ -6,10 +6,8 @@ group :development do
   gem 'rake', '~>10.5'
   gem 'sass', '~>3.4'
   gem 'jekyll', '~> 3'
-  gem 'wdm', '>= 0.1.0'
   gem 'jekyll-paginate', group: [:jekyll_plugins]
   gem 'pygments.rb', group: [:jekyll_plugins]
   gem 'jekyll-compose', group: [:jekyll_plugins]
   gem 'kramdown', group: [:jekyll_plugins]
-  gem 'github-pages', group: :jekyll_plugins
 end
