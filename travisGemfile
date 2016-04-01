@@ -4,6 +4,6 @@ source 'http://rubygems.org'
 
 gem 'liquid'
 gem 'redcarpet'
-gem 'sass'
+gem 'jekyll-sass-converter'
 gem 'github-pages'
 gem 'jekyll'
