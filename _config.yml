@@ -23,7 +23,7 @@ url: http://tomtone.github.io
 baseurl: ""
 # baseurl: ""
 
-# google_analytics: UA-52446115-1
+google_analytics: UA-39757199-2
 repo: http://github.com/tomtone/tomtone.github.io
 disqus_shortname: "thomasvgostomski"
 disqus_site_shortname: "tomtone"
