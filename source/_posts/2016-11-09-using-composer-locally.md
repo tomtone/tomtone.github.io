@@ -17,7 +17,6 @@ Some time ago, I created a short wrapper to utilize Redis-Cache inside an oxid e
 
 So I was faced by a structure like:
 
-
     /path/to/code   
     └──application
     │    folder1
