@@ -3,6 +3,7 @@ layout: post
 title: "Start blogging with jekyll and travis"
 permalink: blog/start-blogging-with-jekyll-and-travis
 date: 2016-04-02 18:59:21
+author: Thomas von Gostomski
 comments: true
 description: "Not as easy as described, some thing will run different."
 keywords: ""
