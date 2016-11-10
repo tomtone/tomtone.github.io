@@ -17,20 +17,19 @@ Some time ago, I created a short wrapper to utilize Redis-Cache inside an oxid e
 
 So I was faced by a structure like:
 
-<code>
-/path/to/code   
-└──application
-│    folder1
-│     folder2
-│     folder2
-│     composer.json
-│   
-└──packages
-       └── redis-wrapper
-              src
-              tests
-              composer.json
-<code>
+
+    /path/to/code   
+    └──application
+    │    folder1
+    │     folder2
+    │     folder2
+    │     composer.json
+    │   
+    └──packages
+           └── redis-wrapper
+                  src
+                  tests
+                  composer.json
 
 The usual way, as far as I knew, until this moment, the best way to make this work, was following a few simple steps:
   *  create repository
