@@ -32,6 +32,7 @@ So I was faced by a structure like:
                   composer.json
 
 The usual way, as far as I knew, until this moment, the best way to make this work, was following a few simple steps:
+
   *  create repository
   *  add, commit and push all files
   *  add repository to composer-Repository part
