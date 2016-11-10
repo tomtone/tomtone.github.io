@@ -18,6 +18,11 @@ layout: null
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>{{ '/about/' | prepend: site.baseurl | prepend: site.url }}</loc>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
