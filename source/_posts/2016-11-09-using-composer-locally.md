@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using composer for local development"
-permalink: usering-composer-locally
+permalink: using-composer-locally
 date: 2016-11-09 08:34:00
 comments: true
 description: "no more debug commits in newly created composer package."
@@ -17,7 +17,7 @@ Some time ago, I created a short wrapper to utilize Redis-Cache inside an oxid e
 
 So I was faced by a structure like:
 
-```
+<code>
 /path/to/code   
 └──application
 │    folder1
@@ -30,7 +30,7 @@ So I was faced by a structure like:
               src
               tests
               composer.json
-```
+<code>
 
 The usual way, as far as I knew, until this moment, the best way to make this work, was following a few simple steps:
   *  create repository
