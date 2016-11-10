@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tomtone.github.io</title>
+    <description>blogging about every day development stuff</description>
+    <link>http://tomtone.github.io/</link>
+    <atom:link href="http://tomtone.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 10 Nov 2016 22:40:06 +0100</pubDate>
+    <lastBuildDate>Thu, 10 Nov 2016 22:40:06 +0100</lastBuildDate>
+    <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Using composer for local development</title>
+        <description>&lt;p&gt;Creating microservices, packages and smaller libraries to speed up development seems to be normal business.
+Some time ago, I created a short wrapper to utilize Redis-Cache inside an oxid eCommerce system.&lt;/p&gt;
+
+&lt;p&gt;So I was faced by a structure like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/path/to/code   
+└──application
+│    folder1
+│     folder2
+│     folder2
+│     composer.json
+│   
+└──packages
+       └── redis-wrapper
+              src
+              tests
+              composer.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The usual way, as far as I knew, until this moment, the best way to make this work, was following a few simple steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;create repository&lt;/li&gt;
+  &lt;li&gt;add, commit and push all files&lt;/li&gt;
+  &lt;li&gt;add repository to composer-Repository part&lt;/li&gt;
+  &lt;li&gt;composer install&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But what happens if you need to change and fix the package itself? Of course, one way could be, to change line right inside the vendor folder.
+By changing the code, you probably ran into the Problem or unknown area “What happens if I ran composer install/update again?”.
+I worried about this and don’t want a bunch of “debug”-commits in my package repository, but after googling a bit, composer is quite a fantastic tool. You can also require local Packages without repositories:
+Simply add those line to your composer.json and go on developing&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;repositories&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;path&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;../../packages/my-package&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;require&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;quot;my/package&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;*&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;After finishing development, simply remove those line and add the new package as vcs Type, or add you satis mirror to enable “normal” composer workflow.&lt;/p&gt;
+
+&lt;p&gt;I like this way, and I’m glad to learn every day more and more about the things I love to use!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Nov 2016 09:34:00 +0100</pubDate>
+        <link>http://tomtone.github.io/blog/using-composer-locally</link>
+        <guid isPermaLink="true">http://tomtone.github.io/blog/using-composer-locally</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Start blogging with jekyll and travis</title>
+        <description>&lt;p&gt;As I started to think about blogging, every solutions seems to be too big. After several days, I came over an article about jekyll and how easy it is to publish a small blog on github.&lt;br /&gt;
+So i decided to give it a try.&lt;/p&gt;
+
+&lt;p&gt;Many years ago I was not only a developer, I was a frontend-developer. So I don’t want just a simple text-based blog UI. It needs to be, at least, a little cute. The start of a nearly endless story searching 
+for the right theme, fitting UI, nice interactions. But overall… who really needs a fantastic webapplication, just to talk about some some ideas and thoughts ?&lt;/p&gt;
+
+&lt;h5 id=&quot;you-are-right-no-one&quot;&gt;You are right… no one!&lt;/h5&gt;
+
+&lt;p&gt;So I stepped back to my very beginnings in searching a theme and took one of the firsts I liked:&lt;/p&gt;
+
+&lt;h4 id=&quot;end2end-theme&quot;&gt;&lt;a href=&quot;http://jekyllthemes.org/themes/end2end/&quot;&gt;end2end theme&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;It looks quite nice and it come along with a pre-configured &lt;code&gt;.travis.yml&lt;/code&gt; and a &lt;code&gt;deploy.sh&lt;/code&gt;
+This makes it quite easy to deploy the jekyll-based Blog to github, BUT only in a project scope.&lt;/p&gt;
+
+&lt;p&gt;So I ended up by a little tweak inside the deployment script:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -e &lt;span class=&quot;c&quot;&gt;# halt script on error&lt;/span&gt;
+
+bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll build
+&lt;span class=&quot;c&quot;&gt;# bundle exec travis-lint&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# bundle exec htmlproof ${HTML_FOLDER} --disable-external&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;HTML_FOLDER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# config&lt;/span&gt;
+git config --global user.email &lt;span class=&quot;s2&quot;&gt;&amp;quot;git-mail&amp;quot;&lt;/span&gt;
+git config --global user.name &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# deploy&lt;/span&gt;
+git init
+git add --all
+git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;Deploy to GitHub Pages&amp;quot;&lt;/span&gt;
+git push --force --quiet &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://${GH_TOKEN}@github.com/${GH_REF}&amp;quot;&lt;/span&gt; master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The original deploy script was build to push to gh-pages branch&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git push --force --quiet &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://${GH_TOKEN}@github.com/${GH_REF}&amp;quot;&lt;/span&gt; master:gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;what doesn’t fit my needs. So next step was to do an automated deployment with any ci. why not take travis as ist was already configured.
+A couple of clicks later, I were the proud owner of a new travis account. And OMG it is amazing easy to configure!&lt;/p&gt;
+
+&lt;p&gt;Deploying this theme needed a little change, for me, to get it working. Simply add the line &lt;code&gt;gem 'jekyll-sass-converter'&lt;/code&gt; to go on error-free building.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# If you have OpenSSL installed, we recommend updating&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# the following line to use &amp;quot;https&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://rubygems.org&amp;#39;&lt;/span&gt;
+gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;liquid&amp;#39;&lt;/span&gt;
+gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;redcarpet&amp;#39;&lt;/span&gt;
+gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;jekyll-sass-converter&amp;#39;&lt;/span&gt;
+gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;github-pages&amp;#39;&lt;/span&gt;
+gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;jekyll&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Sat, 02 Apr 2016 20:59:21 +0200</pubDate>
+        <link>http://tomtone.github.io/blog/start-blogging-with-jekyll-and-travis</link>
+        <guid isPermaLink="true">http://tomtone.github.io/blog/start-blogging-with-jekyll-and-travis</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
