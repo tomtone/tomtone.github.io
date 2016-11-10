@@ -1,7 +1,12 @@
-ul{
-  li{
-    &:before{
-      content: '>  ';
+article.post {
+  ul {
+    li {
+      &:before {
+        content: '>  ';
+      }
+      &:last-child {
+        margin-bottom: 10px;
+      }
     }
   }
 }

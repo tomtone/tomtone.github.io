@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using composer for local development"
-permalink: using-composer-locally
+permalink: blog/using-composer-locally
 date: 2016-11-09 08:34:00
 comments: true
 description: "no more debug commits in newly created composer package."
