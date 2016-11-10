@@ -12,10 +12,14 @@ layout: null
         <priority>1</priority>
     </url>
     {% endfor %}
-    {% for page in site.pages %}
     <url>
-        <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+        <loc>{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>{% endfor %}
+    </url>
+    <url>
+        <loc>{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
